@@ -12,17 +12,9 @@ W - words
 l - letter
 """
 
-def format_rows(docs):
-    """ format the text field and strip special characters """
-    D = []
-    for d in docs.data:
-        temp_d = " ".join(d.split("\n")).strip('\n\t')
-        D.append([temp_d])
-    return D
-
-def format_labels(target, docs):
+def format_labels(label_val, dic):
     """ format the labels """
-    return docs.target_names[target]
+    return dic[label_val]
 
 def check_missing_values(row):
     """ functions that check and verifies if there are missing values in dataframe """
